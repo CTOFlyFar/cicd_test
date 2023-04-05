@@ -1,0 +1,12 @@
+pipeline {
+  agent any
+  tools {nodejs "Node js 16.16.0"}
+  stages {
+    stage('Build') {
+      steps {
+        git branch: 'dev', url: 'https://github.com/CTOFlyFar/cicd_test'
+        sh 'npm install'
+      }
+    }
+  }
+}
